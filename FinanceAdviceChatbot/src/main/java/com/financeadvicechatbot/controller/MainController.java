@@ -15,7 +15,7 @@ public class MainController {
     public String index() { return "index";}
 
     @RequestMapping("/financeAdvice")
-    public String mortgageAdvise(Model model) {
+    public String financeAdvise(Model model) {
 
         return "financeAdvise";
     }
