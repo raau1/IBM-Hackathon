@@ -16,7 +16,7 @@
 
 .Contact-us-container {
     background: #e9d6b5;
-    height: 649px;
+    height: 762px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,6 +90,14 @@
     border-radius: 5px;
     font-size: 14px;
     height: 100px;
+
+}
+
+.Register-item  {
+    width: 100%;
+    padding: 52px;
+    font-size: 14px;
+
 
 }
 
