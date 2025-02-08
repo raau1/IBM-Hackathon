@@ -1,4 +1,4 @@
-package com.example.financialchatbot.service;
+package com.financeadvicechatbot.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;

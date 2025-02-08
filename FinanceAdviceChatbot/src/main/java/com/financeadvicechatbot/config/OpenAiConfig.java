@@ -1,4 +1,4 @@
-package com.example.financialchatbot.config;
+package com.financeadvicechatbot.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

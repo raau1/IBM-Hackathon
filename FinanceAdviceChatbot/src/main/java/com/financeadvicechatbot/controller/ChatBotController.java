@@ -1,17 +1,17 @@
-package com.example.financialchatbot.controller;
+package com.financeadvicechatbot.controller;
 
-import com.example.financialchatbot.service.OpenAiService;
+import com.financeadvicechatbot.service.OpenAiService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api/chat")
-public class ChatbotController {
+public class ChatBotController {
 
     private final OpenAiService openAiService;
 
-    public ChatbotController(OpenAiService openAiService) {
+    public ChatBotController(OpenAiService openAiService) {
         this.openAiService = openAiService;
     }
 

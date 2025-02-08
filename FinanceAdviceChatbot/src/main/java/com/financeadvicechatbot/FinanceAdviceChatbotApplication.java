@@ -1,11 +1,11 @@
-package com.example.financialchatbot;
+package com.financeadvicechatbot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FinancialChatbotApplication {
+public class FinanceAdviceChatbotApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FinancialChatbotApplication.class, args);
+        SpringApplication.run(FinanceAdviceChatbotApplication.class, args);
     }
 }
