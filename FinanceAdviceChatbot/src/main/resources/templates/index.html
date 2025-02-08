@@ -1,13 +1,43 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YFA</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
+
 <body>
+<nav class="navbar">
+
+    <div class="menu-container">
+        <a href="/" id="logo">YFA</a>
+    </div>
+
+</nav>
+<main>
+    <div class="Hero">
+        <div class="Hero-container">
+            <div class="Hero-content">
+                <h1 id = "wel">Welcome to </h1>
+                <h1 id = "welc">Your Financial Advisor </h1>
+                <p id = "slogan">Your money Our priority</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<section>
+    <div class="lower-container">
+        <div class="h-textbox">
+            <h2>Introducing our AI powered financial advisor</h2>
+            <p>Real-time financial advice based on your spending habits</p>
+            <button class="Chatbot-button"> <a href="/chatbot.html">Talk to our Chatbot</a></button>
+        </div>
+
+    </div>
+</section>
+
 
 </body>
 </html>

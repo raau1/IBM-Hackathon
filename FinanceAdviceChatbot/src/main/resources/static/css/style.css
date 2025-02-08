@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Segoe UI
+    font-family: "Segoe UI", sans-serif;
 
 }
 
@@ -13,10 +13,10 @@
     justify-content: center;
     align-items: center;
     font-size: 19.2px;
-    position: sticky;
-    top: 0;
+    width: 100%;
     z-index: 1200;
 }
+
 
 
 .menu-container {
@@ -75,14 +75,14 @@
 
 .Hero {
     background:#e9d6b5;
-    height: 800px
+    height: 400px
 
 }
 
 .Hero-container {
     max-width: 1200px;
     max-height: 400px;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
     display: flex;
     font-size: 20px;
     font-family: sans-serif;
@@ -96,7 +96,6 @@
 .Hero-content {
     justify-content: space-evenly;
     width: 100%;
-    margin-top: 100px ;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid transparent;
@@ -109,9 +108,8 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #ffffff;
     font-size: 120px;
-    position: center;
-    margin-left: 450px;
-    margin-top: 250px;
+    margin-left: 400px;
+    margin-top: 100px;
     width: 900px;
 
 
@@ -122,8 +120,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #2e4b69;
     font-size: 50px;
-    position: center;
-    margin-left: 520px;
+    margin-left: 470px;
 
 
 }
@@ -139,9 +136,8 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #d4a177;
     font-size: 30px;
-    position: center;
     margin-top: 30px;
-    margin-left: 650px;
+    margin-left: 580px;
     width: 800px;
 }
 
@@ -149,9 +145,8 @@
     padding: 70px;
     background-color: #ffffff;
     width: 700px;
-    position: center;
     border-radius: 25px;
-    margin-left: 450px;
+    margin-left: 405px;
 }
 
 .lower-container {
@@ -177,7 +172,7 @@
 
 }
 
-.Mortgage-button {
+.Chatbot-button {
     margin-top: 20px;
     margin-left: 15px;
     border-radius: 14px;
@@ -189,6 +184,6 @@
 
 }
 
-button .Mortgage-button{
+button .Chatbot-button{
     text-decoration: none;
 }

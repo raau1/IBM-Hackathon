@@ -1,14 +1,6 @@
-package com.financeadvicechatbot.model;
+package com.financeadvicechatbot.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table
-public class User {
-    // Attributes
-    @Id
-    private String email;
-    private String password;
+public class ChatbotInfoDto {
     private String financialAim;
     private float monthlyIncome;
     private float monthlySavings;
@@ -17,21 +9,15 @@ public class User {
     private float spendingSubscriptions;
     private float spendingOther;
 
-    // Getters and Setters
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    @Override
+    public String toString() {
+        return "My Financial Aim is : " + financialAim +
+                ", My Monthly Income is : " + monthlyIncome +
+                ", My Monthly Savings are : " + monthlySavings +
+                ", I spend this much on neccesities each month : " + spendingNeccesities +
+                ", I spend this much on Leisure each month : " + spendingLeisure +
+                ", I spend this much on Subscriptions each month : " + spendingSubscriptions +
+                ", I spend this much on Other each month : " + spendingOther;
     }
 
     public String getFinancialAim() {
