@@ -15,9 +15,12 @@ public class ChatBotController {
         this.openAiService = openAiService;
     }
 
-    @PostMapping
-    public String chatWithBot(@RequestBody Map<String, String> request) {
-        String userInput = request.get("message");
-        return openAiService.getChatbotResponse(userInput);
-    }
+    /**
+     @PostMapping
+     public String chatWithBot(@RequestBody Map<String, String> request) {
+     String userInput = request.get("message");
+     return openAiService.getChatbotResponse(userInput);
+     }
+     ***/
+
 }
