@@ -26,13 +26,13 @@ public class SecurityConfig {
         http.authorizeHttpRequests(request -> request.requestMatchers("/register", "/login",
                         "/css/**", "/js/**", "/images/**").permitAll()
                 // Any other request has to be authenticated
-                .anyRequest().permitAll());
+                .anyRequest().authenticated());
         http.formLogin(form -> form
                 .loginPage("/login")
                 // Specifying we are using email not username
                 .usernameParameter("email")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/dashboard", true)
+                .defaultSuccessUrl("/", true)
                 .permitAll());
 
         // Specify what happens when a user logs out
