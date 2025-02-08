@@ -1,5 +1,6 @@
 package com.financeadvicechatbot.service;
 
+import com.financeadvicechatbot.dto.ChatbotInfoDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,10 @@ public class OpenAiService {
 
     private static final String API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-alpha";
 
-    public String getChatbotResponse(String userMessage) {
+    public String getChatbotResponse(ChatbotInfoDto chatbotInfoDto) {
+        //Making the chatbotInfoDto into a String
+        String userMessage = chatbotInfoDto.toString();
+
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
