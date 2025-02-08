@@ -1,0 +1,52 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Mortgage Advise</title>
+</head>
+<body>
+<nav class="navbar">
+
+    <div class="menu-container">
+        <a href="Homepage.html" id="logo">YFA</a>
+    </div>
+
+    <ul class="menu">
+        <li class="page">
+            <a href="Homepage.html" class="navbar-links"> Home </a>
+        </li>
+
+        <li class="page">
+            <a href="Mortgage.html" class="navbar-links">Mortgage</a>
+        </li>
+
+        <li class="page">
+            <a href="Aboutus.html" class="navbar-links">About Us</a>
+        </li>
+
+        <li class="page">
+            <a href="Service.html" class="navbar-links">Services</a>
+        </li>
+
+        <li class="page">
+            <a href="FAQ.html" class="navbar-links">FAQ</a>
+        </li>
+
+    </ul>
+</nav>
+
+<main>
+    <div class="Hero">
+        <div class="Hero-container">
+            <div class="Hero-content">
+                <h1 th:text="${aiOutputs}">Waiting On Results...</h1>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
