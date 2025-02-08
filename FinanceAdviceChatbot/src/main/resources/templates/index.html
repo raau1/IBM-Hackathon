@@ -1,13 +1,65 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YFA</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
+
 <body>
+<nav class="navbar">
+
+    <div class="menu-container">
+        <a href="Homepage.html" id="logo">YFA</a>
+    </div>
+
+    <ul class="menu">
+        <li class="page">
+            <a href="Homepage.html" class="navbar-links"> Home </a>
+        </li>
+
+        <li class="page">
+            <a href="Mortgage.html" class="navbar-links">Mortgage</a>
+        </li>
+
+        <li class="page">
+            <a href="Aboutus.html" class="navbar-links">About Us</a>
+        </li>
+
+        <li class="page">
+            <a href="Service.html" class="navbar-links">Services</a>
+        </li>
+
+        <li class="page">
+            <a href="FAQ.html" class="navbar-links">FAQ</a>
+        </li>
+
+    </ul>
+</nav>
+<main>
+    <div class="Hero">
+        <div class="Hero-container">
+            <div class="Hero-content">
+                <h1 id = "wel">Welcome to </h1>
+                <h1 id = "welc">Your Financial Advisor </h1>
+                <p id = "slogan">Your money Our priority</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<section>
+    <div class="lower-container">
+        <div class="h-textbox">
+            <h2>Introducing our Mortgage Calculator</h2>
+            <p>Our mortgage calculator has all of the tools that can help find the right mortgage for you.</p>
+            <button class="Mortgage-button"> <a href="Mortgage.html">Mortgage calculator</a></button>
+        </div>
+
+    </div>
+</section>
+
 
 </body>
 </html>
