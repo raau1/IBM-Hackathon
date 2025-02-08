@@ -26,7 +26,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(request -> request.requestMatchers("/register", "/login",
                         "/css/**", "/js/**", "/images/**").permitAll()
                 // Any other request has to be authenticated
-                .anyRequest().authenticated());
+                .anyRequest().permitAll());
         http.formLogin(form -> form
                 .loginPage("/login")
                 // Specifying we are using email not username
