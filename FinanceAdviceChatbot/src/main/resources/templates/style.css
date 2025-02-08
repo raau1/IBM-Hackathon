@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Segoe UI
+
+}
+
+.navbar {
+    background: #2e4b69;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19.2px;
+    position: sticky;
+    top: 0;
+    z-index: 1200;
+}
+
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#logo {
+    color:#ffffff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 650;
+
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.page {
+    height: 80px;
+}
+
+.navbar-links {
+    color: #e47113;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 100%;
+    padding: 0 16px;
+    font-size: 90%;
+    transition: color 0.3s ease;
+}
+
+.navbar-links:hover {
+    color: #fed183;
+    border-bottom: 2px solid #fed183;
+}
+
+
+
+.Hero {
+    background:#e9d6b5;
+    height: 800px
+
+}
+
+.Hero-container {
+    max-width: 1200px;
+    max-height: 400px;
+    margin-bottom: 150px;
+    display: flex;
+    font-size: 20px;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+
+}
+
+
+.Hero-content {
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 100px ;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid transparent;
+    animation: typing 1.5s steps(300) ;
+
+
+}
+
+#wel {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    font-size: 120px;
+    position: center;
+    margin-left: 450px;
+    margin-top: 250px;
+    width: 900px;
+
+
+
+}
+
+#welc {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #2e4b69;
+    font-size: 50px;
+    position: center;
+    margin-left: 520px;
+
+
+}
+
+@keyframes typing {
+    from {width: 0%;}
+    to {width: 100%;}
+}
+
+
+
+#slogan {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #d4a177;
+    font-size: 30px;
+    position: center;
+    margin-top: 30px;
+    margin-left: 650px;
+    width: 800px;
+}
+
+.h-textbox {
+    padding: 70px;
+    background-color: #ffffff;
+    width: 700px;
+    position: center;
+    border-radius: 25px;
+    margin-left: 450px;
+}
+
+.lower-container {
+    background-color: #e9d6b5 ;
+    width: 100%;
+    height: 419px;
+    align-items: center;
+    display: flex;
+}
+
+#box-title {
+    font-size: 30px;
+    color: #e47113;
+
+
+}
+
+#box-content {
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #d4a177;
+    margin-top: 20px;
+
+}
+
+.Mortgage-button {
+    margin-top: 20px;
+    margin-left: 15px;
+    border-radius: 14px;
+    font-size: 15px;
+    width: 150px;
+    background-color: #e47113;
+    border-color: #e47113;
+    font-family: sans-serif;
+
+}
+
+button .Mortgage-button{
+    text-decoration: none;
+}
