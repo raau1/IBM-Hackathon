@@ -1,0 +1,202 @@
+.morgage-Calculator {
+    background:#e9d6b5;
+    height: 649px;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.calculator-box {
+    padding: 70px;
+    background-color: #ffffff;
+    width: 400px;
+    height: 580px;
+    position: center;
+    border-radius: 25px;
+    margin-left: px;
+    margin-top: 50px;
+}
+
+.Result-box {
+    padding: 70px;
+    background-color: #ffffff;
+    width: 400px;
+    height: 580px;
+    position: center;
+    border-radius: 25px;
+    margin-left: -55px;
+    margin-top: 50px;
+}
+
+
+#res-title {
+    font-size: 20px;
+    color: #e47113;
+
+
+
+
+}
+
+#cal-content {
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #d4a177;
+    margin-top: 40px;
+
+
+}
+
+.calculate-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 45px;
+    background-color: #2e4b69;
+    color: #e9d6b5;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 600;
+
+
+}
+
+.calculate-button:hover {
+    background-color: #e9d6b5;
+    border: 2px solid #e9d6b5cd;
+
+}
+
+button.calculate-button a{
+    text-decoration: none;
+    color: #e47113;
+
+}
+
+.form-item {
+    margin-top: 30px;
+    background-color: #e9d6b5;
+    padding-bottom: 12px;
+    padding-left: 10px;
+    padding-top: 2%;
+    border-radius: 12px;
+
+
+}
+
+.filling-form {
+    display: inline-flex;
+    margin-top: 3px;
+}
+
+.form-symbol {
+    background-color: #97a6c0;
+    color: #2e4b69;
+    padding: 8px 12px;
+    font-weight: 600;
+
+
+}
+
+.Heading{
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #2e4b69;
+}
+
+#Loan-amount {
+    background-color: #f5e5c6dc;
+    border: 1px solid #e9d6b5cd;
+
+}
+
+#Loan-term {
+    background-color: #f5e5c6dc;
+    border: 1px solid #e9d6b5cd;
+}
+
+
+#Monthly-income-main {
+    background-color: #f5e5c6dc;
+    border: 1px solid #e9d6b5cd;
+}
+
+.filling-form {
+    border: 1px solid transparent;
+}
+
+#res-brief  {
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #2e4b69;
+    margin-top: 20px;
+    width: 300px;
+}
+
+.res-res {
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #2e4b69;
+    margin-top:15px;
+    font-weight: 600;
+    background-color: #e9d6b5;
+    padding: 25px;
+    border-radius: 5%;
+
+}
+
+.light-text {
+    margin-top: 8px;
+
+}
+
+#elegibility-res {
+    color: #97a6c0;
+    background-color: #f5e5c6dc;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 2%;
+
+
+}
+
+
+#Monthlypayment-res {
+    color: #97a6c0;
+    background-color: #f5e5c6dc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 2%;
+}
+
+#totalintrest-res {
+    color: #97a6c0;
+    background-color: #f5e5c6dc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 2%;
+
+}
+
+#remaining-Monthly-Payment-res {
+    color: #97a6c0;
+    background-color: #f5e5c6dc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 22px ;
+    font-weight: 400;
+    margin-top: 2%;
+
+}
+
+
+
+
+

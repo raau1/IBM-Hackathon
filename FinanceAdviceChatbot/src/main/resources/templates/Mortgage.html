@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank.ai</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mortgage.css">
+    <script src="calculator.js"></script>
+
+</head>
+
+<body>
+<nav class="navbar">
+
+    <div class="menu-container">
+        <a href="Homepage.html" id="logo">Bank.ai</a>
+    </div>
+
+    <ul class="menu">
+        <li class="page">
+            <a href="Homepage.html" class="navbar-links"> Home </a>
+        </li>
+
+        <li class="page">
+            <a href="Mortgage.html" class="navbar-links">Mortgage</a>
+        </li>
+
+        <li class="page">
+            <a href="Aboutus.html" class="navbar-links">About Us</a>
+        </li>
+
+        <li class="page">
+            <a href="Contactus.html" class="navbar-links">Contact Us</a>
+        </li>
+
+        <li class="page">
+            <a href="Service.html" class="navbar-links">Services</a>
+        </li>
+
+        <li class="page">
+            <a href="FAQ.html" class="navbar-links">FAQ</a>
+        </li>
+
+    </ul>
+</nav>
+
+<main>
+    <div class="morgage-Calculator">
+        <div class="calculator">
+
+
+            <div class="calculator-box">
+
+                <div class="form-item">
+                    <label class="Heading" for="Monthly-income">Monthly Income</label>
+                    <div class="filling-form" id="Monthly-income-main">
+                        <p class="form-symbol">£</p>
+                        <input id="Monthly-income-main" type="number" name="Monthly-income" placeholder=" Enter Monthly income" required>
+                    </div>
+                </div>
+
+
+
+                <div class="form-item">
+                    <label class="Heading" for="Loan-term">Financial Aim</label>
+                    <div class="filling-form" id="Loan-term-main">
+                        <p class="form-symbol">|</p>
+                        <input id="Loan-term" type="text" name="Loan-term"  placeholder=" Enter Financial Aim" required/>
+                    </div>
+                </div>
+
+
+                <div class="form-item">
+                    <label class="Heading" for="Loan-amount">Monthly Saving</label>
+                    <div class="filling-form" id="Loan-amount-main">
+                        <p class="form-symbol">£</p>
+                        <input id="Loan-amount" type="number" name="Loan-amount" placeholder=" Enter Monthly Savings"required>
+                    </div>
+                </div>
+
+
+
+                <div>
+
+                    <button id="calculate-button" class="calculate-button" type="button"> <a>Generate Advice </a> </button>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+        <div class="Result-box">
+            <p id="res-title">How much do you spend per month on:</p>
+
+            <div class="form-item">
+                <label class="Heading" for="Monthly-income">Necessities</label>
+                <div class="filling-form" id="Monthly-income-main">
+                    <p class="form-symbol">£</p>
+                    <input id="Monthly-income-main" type="number" name="Monthly-income" placeholder=" Enter amount spent" required>
+                </div>
+            </div>
+
+
+            <div class="form-item">
+                <label class="Heading" for="Loan-term">Leisure & miscellaneous</label>
+                <div class="filling-form" id="Loan-term-main">
+                    <p class="form-symbol">£</p>
+                    <input id="Loan-term" type="number" name="Loan-term"  placeholder=" Enter amount spent" required/>
+                </div>
+            </div>
+
+
+            <div class="form-item">
+                <label class="Heading" for="Loan-amount">Subscriptions</label>
+                <div class="filling-form" id="Loan-amount-main">
+                    <p class="form-symbol">£</p>
+                    <input id="Loan-amount" type="number" name="Loan-amount" placeholder=" Enter amount spent"required>
+                </div>
+            </div>
+
+
+            <p id="res-brief">Complete the form to get a full Breakdown based on the information provided </p>
+            </div>
+
+        </div>
+
+
+    </div>
+</main>
+
+
+</body>
+</html>
