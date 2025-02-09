@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YFA</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mortgage.css">
+    <link rel="stylesheet" href="Chatbot-style.css">
     <script src="calculator.js"></script>
 
 </head>
@@ -20,7 +20,7 @@
     <ul class="menu">
 
         <li class="page">
-            <a href="Service.html" class="navbar-links">Services</a>
+            <a href="Chatbot.html" class="navbar-links">Advisor</a>
         </li>
 
         <li class="page">
@@ -31,10 +31,12 @@
 </nav>
 
 <main>
+
+
     <div class="Chat-Bot">
         <div class="ChatBot">
 
-
+            <form>
             <div class="IP1">
 
                 <div class="form-item">
@@ -60,7 +62,7 @@
                     <label class="Heading">Monthly Saving</label>
                     <div class="filling-form" id="Monthly-saving-main">
                         <p class="form-symbol">£</p>
-                        <input id="Monthly-saving" type="number" name="Monthly-saving" placeholder=" Enter Monthly Savings"required>
+                        <input id="Monthly-saving-main" type="number" name="Monthly-saving" placeholder=" Enter Monthly Savings"required>
                     </div>
                 </div>
 
@@ -74,28 +76,28 @@
             <p id="res-title">How much do you spend per month on:</p>
 
             <div class="form-item">
-                <label class="Heading" for="Monthly-income-main">Necessities</label>
-                <div class="filling-form" id="Monthly-income-main">
+                <label class="Heading">Necessities</label>
+                <div class="filling-form" id="Necessities-main">
                     <p class="form-symbol">£</p>
-                    <input id="Monthly-income-main" type="number" name="Monthly-income" placeholder=" Enter amount spent" required>
+                    <input id="Necessities-main" type="number" name="Necessities" placeholder=" Enter amount spent" required>
                 </div>
             </div>
 
 
             <div class="form-item">
                 <label class="Heading">Leisure & miscellaneous</label>
-                <div class="filling-form" id="Loan-term-main">
+                <div class="filling-form" id="Leisure-miscellaneous-main">
                     <p class="form-symbol">£</p>
-                    <input id="Loan-term" type="number" name="Loan-term"  placeholder=" Enter amount spent" required/>
+                    <input id="Leisure-miscellaneous-main" type="number" name="Leisure-miscellaneous"  placeholder=" Enter amount spent" required/>
                 </div>
             </div>
 
 
             <div class="form-item">
-                <label class="Heading" for="Loan-amount">Subscriptions</label>
-                <div class="filling-form" id="Loan-amount-main">
+                <label class="Heading">Subscriptions</label>
+                <div class="filling-form" id="Subscriptions-main">
                     <p class="form-symbol">£</p>
-                    <input id="Loan-amount" type="number" name="Loan-amount" placeholder=" Enter amount spent"required>
+                    <input id="Subscriptions-main" type="number" name="Subscriptions" placeholder=" Enter amount spent"required>
                 </div>
             </div>
 
@@ -108,7 +110,7 @@
                 <button id="calculate-button" class="calculate-button" type="button"> <a>Generate Advice </a> </button>
 
             </div>
-
+            <form>
         </div>
 
 

@@ -122,7 +122,7 @@ button.calculate-button a{
     color: #2e4b69;
 }
 
-#Loan-amount {
+#Monthly-income-main {
     background-color: #f5e5c6dc;
     border: 1px solid #e9d6b5cd;
 
@@ -134,10 +134,27 @@ button.calculate-button a{
 }
 
 
-#Monthly-income-main {
+#Monthly-saving-main {
     background-color: #f5e5c6dc;
     border: 1px solid #e9d6b5cd;
 }
+
+#Necessities-main {
+    background-color: #f5e5c6dc;
+    border: 1px solid #e9d6b5cd;
+}
+
+
+#Leisure-miscellaneous-main {
+    background-color: #f5e5c6dc;
+    border: 1px solid #e9d6b5cd;
+}
+
+#Subscriptions-main {
+    background-color: #f5e5c6dc;
+    border: 1px solid #e9d6b5cd;
+}
+
 
 .filling-form {
     border: 1px solid transparent;

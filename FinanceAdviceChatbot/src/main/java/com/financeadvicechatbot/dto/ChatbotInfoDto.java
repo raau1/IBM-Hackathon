@@ -17,7 +17,7 @@ public class ChatbotInfoDto {
                 ", I spend this much on neccesities each month : " + spendingNeccesities +
                 ", I spend this much on Leisure each month : " + spendingLeisure +
                 ", I spend this much on Subscriptions each month : " + spendingSubscriptions +
-                ", I spend this much on Other each month : " + spendingOther;
+                ", I spend this much on Other each month : " + spendingOther + ". Give me Advice.";
     }
 
     public String getFinancialAim() {

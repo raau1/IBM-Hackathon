@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YFA</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Mortgage Advise</title>
 </head>
-
 <body>
 <nav class="navbar">
 
@@ -37,29 +38,15 @@
 
     </ul>
 </nav>
+
 <main>
     <div class="Hero">
         <div class="Hero-container">
             <div class="Hero-content">
-                <h1 id = "wel">Welcome to </h1>
-                <h1 id = "welc">Your Financial Advisor </h1>
-                <p id = "slogan">Your money Our priority</p>
+                <h1 th:text="${chatbotOutput}">Waiting On Results...</h1>
             </div>
         </div>
     </div>
 </main>
-
-<section>
-    <div class="lower-container">
-        <div class="h-textbox">
-            <h2>Introducing our Mortgage Calculator</h2>
-            <p>Our mortgage calculator has all of the tools that can help find the right mortgage for you.</p>
-            <button class="Mortgage-button"> <a href="Mortgage.html">Mortgage calculator</a></button>
-        </div>
-
-    </div>
-</section>
-
-
 </body>
 </html>
