@@ -23,6 +23,19 @@
             <a href="/financeAdvice" class="navbar-links">Chatbot Results</a>
         </li>
     </ul>
+
+    <!-- Profile Section (Only visible when user is logged in) -->
+    <div class="profile-section" th:if="${#authorization.expression('isAuthenticated()')}">
+        <!-- Clickable Profile Picture -->
+        <img src="/images/pfp.png" alt="Profile Picture" class="profile-pic" onclick="toggleDropdown()">
+
+        <!-- Dropdown Menu -->
+        <div id="profile-dropdown" class="profile-dropdown">
+            <a href="/logout" class="dropdown-item">Sign Out</a>
+        </div>
+    </div>
+
+
 </nav>
 <main>
     <div class="Hero">
@@ -52,6 +65,6 @@
 </section>
 
 
-
+<script th:src="@{/javascript/navbar.js}"></script>
 </body>
 </html>
