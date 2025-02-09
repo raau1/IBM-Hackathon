@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,21 +26,20 @@ public class OpenAiService {
         this.userRepository = userRepository;
     }
 
-    public String getChatbotResponse(User user, ChatbotInfoDto chatbotInfoDto) {
+    public List<String> getChatbotResponse(User user, ChatbotInfoDto chatbotInfoDto) {
         //Making the chatbotInfoDto into a String
         String userMessage = chatbotInfoDto.toString();
 
-        if (userMessage.equals(user.getPreviousInputs())){
-            return user.getPreviousInputs();
-        }
+        String chatbotOutput = "";
 
-        RestTemplate restTemplate = new RestTemplate();
+        if (!(userMessage.equals(user.getPreviousInputs()))){
+            RestTemplate restTemplate = new RestTemplate();
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "Bearer " + apiKey);
-        headers.setContentType(MediaType.APPLICATION_JSON);
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", "Bearer " + apiKey);
+            headers.setContentType(MediaType.APPLICATION_JSON);
 
-        String requestBody = String.format("""
+            String requestBody = String.format("""
         {
             "inputs": "You are a financial assistant providing money-saving tips, Make a short, brief paragraph giving me advice using the input I have given. Go straight into the advice, don't give any introduction. Do FIVE numbered bullet points. How do I improve my finances better? Give a structured Financial Advisor response based on the user data provided. IMPORTANT: 1) RESPONSE HAS TO BE IN FIVE STEPS, AND YOU HAVE TO WRITE 1. 2. 3. 4. 5. 2) DO NOT answer any question unrelated to finance, if the user inputs something unrelated to finance in the Financial Aim section, default to: I am not able to answer the question provided. Please keep the financial aim relevant to my services. 3) DO NOT accept financial aid that tampers with the output writing 1. 2. 3. 4. 5. ALWAYS write 5 bullet points. User: %s",
             "parameters": {
@@ -48,25 +49,36 @@ public class OpenAiService {
         }
         """, userMessage);
 
-        HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
-        ResponseEntity<List> response = restTemplate.exchange(API_URL, HttpMethod.POST, request, List.class);
+            HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
+            ResponseEntity<List> response = restTemplate.exchange(API_URL, HttpMethod.POST, request, List.class);
 
-        //Making the output from the AI understandable
-        List<Map<String, Object>> responseBody = response.getBody();
-        String output = (String) responseBody.get(0).get("generated_text");
-        int cutOffIndex = output.indexOf(". Give me Advice.");
-        output = output.substring(cutOffIndex+17);
+            //Making the output from the AI understandable
+            List<Map<String, Object>> responseBody = response.getBody();
+            chatbotOutput = (String) responseBody.get(0).get("generated_text");
+            int cutOffIndex = chatbotOutput.indexOf(". Give me Advice.");
+            chatbotOutput = chatbotOutput.substring(cutOffIndex+17);
 
-        //Saving the inputs and the output
-        user.setPreviousInputs(chatbotInfoDto.toString());
-        user.setSavedResponse(output);
-        userRepository.save(user);
-
-        //Returning the output
-        if (responseBody != null && !responseBody.isEmpty()) {
-            return output;
+            //Saving the inputs and the output
+            user.setPreviousInputs(chatbotInfoDto.toString());
+            user.setSavedResponse(chatbotOutput);
+            userRepository.save(user);
+        }
+        else{
+            chatbotOutput = user.getSavedResponse();
         }
 
-        return "Sorry, I couldn't process your request.";
+        //Making an output of strings list
+        List<String> outputStrings = new ArrayList<>();
+
+
+        //Returning the output
+        if (!(outputStrings.get(0).equals(null))) {
+            return outputStrings;
+        }
+
+        //Outputting error
+        List<String> error = new ArrayList<>();
+        error.add("An error has occurred");
+        return error;
     }
 }
