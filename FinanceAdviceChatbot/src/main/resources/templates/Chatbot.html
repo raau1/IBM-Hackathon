@@ -31,43 +31,40 @@
 </nav>
 
 <main>
-
-
     <div class="Chat-Bot">
         <div class="ChatBot">
+            <form action="/chatbot" method="post">
+                <div class="IP1">
 
-            <form>
-            <div class="IP1">
-
-                <div class="form-item">
-                    <label class="Heading">Monthly Income</label>
-                    <div class="filling-form" id="Monthly-income-main">
-                        <p class="form-symbol">£</p>
-                        <input id="Monthly-income-main" type="number" name="Monthly-income" placeholder=" Enter Monthly income" required>
+                    <div class="form-item">
+                        <label class="Heading">Monthly Income</label>
+                        <div class="filling-form" id="Monthly-income-main">
+                            <p class="form-symbol">£</p>
+                            <input id="Monthly-income-main" type="number" name="monthlyIncome" placeholder=" Enter Monthly income" required>
+                        </div>
                     </div>
-                </div>
 
 
 
-                <div class="form-item">
-                    <label class="Heading">Financial Aim</label>
-                    <div class="filling-form" id="Financial-aim-main">
-                        <p class="form-symbol">|</p>
-                        <input id="Financial-aim-main" type="text" name="Financial-aim"  placeholder=" Enter Financial Aim" required/>
+                    <div class="form-item">
+                        <label class="Heading">Financial Aim</label>
+                        <div class="filling-form" id="Financial-aim-main">
+                            <p class="form-symbol">|</p>
+                            <input id="Financial-aim-main" type="text" name="financialAim"  placeholder=" Enter Financial Aim" required/>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="form-item">
-                    <label class="Heading">Monthly Saving</label>
-                    <div class="filling-form" id="Monthly-saving-main">
-                        <p class="form-symbol">£</p>
-                        <input id="Monthly-saving-main" type="number" name="Monthly-saving" placeholder=" Enter Monthly Savings"required>
+                    <div class="form-item">
+                        <label class="Heading">Monthly Saving</label>
+                        <div class="filling-form" id="Monthly-saving-main">
+                            <p class="form-symbol">£</p>
+                            <input id="Monthly-saving-main" type="number" name="monthlySaving" placeholder=" Enter Monthly Savings"required>
+                        </div>
                     </div>
+
+
                 </div>
-
-
-            </div>
 
         </div>
 
@@ -79,7 +76,7 @@
                 <label class="Heading">Necessities</label>
                 <div class="filling-form" id="Necessities-main">
                     <p class="form-symbol">£</p>
-                    <input id="Necessities-main" type="number" name="Necessities" placeholder=" Enter amount spent" required>
+                    <input id="Necessities-main" type="number" name="necessities" placeholder=" Enter amount spent" required>
                 </div>
             </div>
 
@@ -88,7 +85,7 @@
                 <label class="Heading">Leisure & miscellaneous</label>
                 <div class="filling-form" id="Leisure-miscellaneous-main">
                     <p class="form-symbol">£</p>
-                    <input id="Leisure-miscellaneous-main" type="number" name="Leisure-miscellaneous"  placeholder=" Enter amount spent" required/>
+                    <input id="Leisure-miscellaneous-main" type="number" name="leisureMiscellaneous"  placeholder=" Enter amount spent" required/>
                 </div>
             </div>
 
@@ -97,23 +94,18 @@
                 <label class="Heading">Subscriptions</label>
                 <div class="filling-form" id="Subscriptions-main">
                     <p class="form-symbol">£</p>
-                    <input id="Subscriptions-main" type="number" name="Subscriptions" placeholder=" Enter amount spent"required>
+                    <input id="Subscriptions-main" type="number" name="subscriptions" placeholder=" Enter amount spent"required>
                 </div>
             </div>
 
             <div>
-            <p id="res-brief">Complete the form to get a full Breakdown based on the information provided </p>
+                <p id="res-brief">Complete the form to get a full Breakdown based on the information provided </p>
             </div>
-
             <div class="Generate-button">
-
-                <button id="calculate-button" class="calculate-button" type="button"> <a>Generate Advice </a> </button>
-
+                <button id="calculate-button" class="calculate-button">Generate Advice</button>
             </div>
-            <form>
+            </form>
         </div>
-
-
     </div>
 </main>
 
