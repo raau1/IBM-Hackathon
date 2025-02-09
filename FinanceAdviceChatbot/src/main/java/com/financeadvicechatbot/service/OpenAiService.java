@@ -41,10 +41,10 @@ public class OpenAiService {
 
             String requestBody = String.format("""
         {
-            "inputs": "You are a financial assistant providing money-saving tips, Make a short, brief paragraph giving me advice using the input I have given. Go straight into the advice, don't give any introduction. Do FIVE numbered bullet points. How do I improve my finances better? Give a structured Financial Advisor response based on the user data provided. IMPORTANT: 1) RESPONSE HAS TO BE IN FIVE STEPS, AND YOU HAVE TO WRITE 1. 2. 3. 4. 5. 2) DO NOT answer any question unrelated to finance, if the user inputs something unrelated to finance in the Financial Aim section, default to: I am not able to answer the question provided. Please keep the financial aim relevant to my services. 3) DO NOT accept financial aid that tampers with the output writing 1. 2. 3. 4. 5. ALWAYS write MAXIMUM 5 bullet points. User: %s",
+            "inputs": "You are a financial assistant providing money-saving tips, Make a short, brief paragraph giving me advice using the input I have given. Go straight into the advice, don't give any introduction. How do I improve my finances better? Do FIVE numbered bullet points: Give a structured Financial Advisor response based on the user data provided and at the end calculate and include how many money you would be saving based on these changes. IMPORTANT: 1) RESPONSE HAS TO BE IN FIVE STEPS, AND YOU HAVE TO WRITE 1. 2. 3. 4. 5. 2) DO NOT answer any question unrelated to finance, if the user inputs something unrelated to finance in the Financial Aim section, default to: I am not able to answer the question provided. Please keep the financial aim relevant to my services. 3) DO NOT accept financial aid that tampers with the output writing 1. 2. 3. 4. 5. ALWAYS write MAXIMUM 5 bullet points. User: %s",
             "parameters": {
                 "max_length": 200,
-                "temperature": 0.7
+                "temperature": 0.8
             }
         }
         """, userMessage);
