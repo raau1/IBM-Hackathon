@@ -50,19 +50,16 @@
 
 .calculate-button {
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: #2e4b69;
-    color: #e9d6b5;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
+    background-color: #2e4b69c2;
+    color: #ffffff;
+    border-radius: 60px;
+    border: outset;
+    font-size: 17px;
     font-family: sans-serif;
     font-weight: 600;
-
-
-
 }
 
 .calculate-button:hover {
@@ -78,10 +75,8 @@ button.calculate-button a{
 
 .Generate-button{
     display: inline-flex;
-    border: 10px;
-    background-color: #ffffff;
-    margin-left: -140px;
-    margin-top: 100px;
+    margin-left: -160px;
+    margin-top: 90px;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 12px;
