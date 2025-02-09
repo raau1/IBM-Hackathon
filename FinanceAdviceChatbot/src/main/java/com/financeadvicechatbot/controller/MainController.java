@@ -38,7 +38,6 @@ public class MainController {
         User user = userRepository.findByEmail(userDetails.getUsername());
         ChatbotInfoDto chatbotInfo = userService.getChatbotInfo(user);
         List<String> chatbotOutput = openAiService.getChatbotResponse(user, chatbotInfo);
-        model.addAttribute("chatbotOutput1", chatbotOutput.get(0));
         model.addAttribute("chatbotOutput2", chatbotOutput.get(1));
         model.addAttribute("chatbotOutput3", chatbotOutput.get(2));
         model.addAttribute("chatbotOutput4", chatbotOutput.get(3));
