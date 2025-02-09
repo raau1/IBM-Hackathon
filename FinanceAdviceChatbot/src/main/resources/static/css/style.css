@@ -195,17 +195,6 @@ button .Chatbot-button{
     font-size: 10px;
 }
 
-.navbar {
-    background: #e9d6b5;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 19.2px;
-    position: sticky;
-    top: 0;
-    z-index: 1200;
-}
 
 #logo {
     color: #e47113;
