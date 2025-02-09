@@ -12,6 +12,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
@@ -42,4 +43,7 @@ public class MainController {
         model.addAttribute("chatbotOutput6", chatbotOutput.get(5));
         return "financeAdvise";
     }
+
+    @GetMapping("/chatbot")
+    public String chatbot(){ return "Chatbot";}
 }
