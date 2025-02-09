@@ -19,7 +19,6 @@ public class OpenAiService {
     public String getChatbotResponse(ChatbotInfoDto chatbotInfoDto) {
         //Making the chatbotInfoDto into a String
         String userMessage = chatbotInfoDto.toString();
-        System.out.println(userMessage);
 
         RestTemplate restTemplate = new RestTemplate();
 
@@ -29,7 +28,7 @@ public class OpenAiService {
 
         String requestBody = String.format("""
         {
-            "inputs": "You are a financial assistant providing money-saving tips. User: %s",
+            "inputs": "You are a financial assistant providing money-saving tips. Make a short, brief paragraph giving me advice using the input I have given. Go straight into the advice, don't give any introduction. User: %s",
             "parameters": {
                 "max_length": 200,
                 "temperature": 0.7
@@ -40,9 +39,15 @@ public class OpenAiService {
         HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
         ResponseEntity<List> response = restTemplate.exchange(API_URL, HttpMethod.POST, request, List.class);
 
+        //Making the output from the AI understandable
         List<Map<String, Object>> responseBody = response.getBody();
+        String output = (String) responseBody.get(0).get("generated_text");
+        int cutOffIndex = output.indexOf(". Give me Advice.");
+        output = output.substring(cutOffIndex+17);
+
+        //Returning the output
         if (responseBody != null && !responseBody.isEmpty()) {
-            return responseBody.get(0).get("generated_text").toString();
+            return output;
         }
 
         return "Sorry, I couldn't process your request.";
