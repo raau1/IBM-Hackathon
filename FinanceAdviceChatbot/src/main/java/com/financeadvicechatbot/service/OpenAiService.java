@@ -1,6 +1,8 @@
 package com.financeadvicechatbot.service;
 
 import com.financeadvicechatbot.dto.ChatbotInfoDto;
+import com.financeadvicechatbot.model.User;
+import com.financeadvicechatbot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -11,14 +13,24 @@ import java.util.Map;
 @Service
 public class OpenAiService {
 
+    private final UserRepository userRepository;
+
     @Value("${openai.api.key}")
     private String apiKey;
 
     private static final String API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-alpha";
 
-    public String getChatbotResponse(ChatbotInfoDto chatbotInfoDto) {
+    public OpenAiService(UserService userService, UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public String getChatbotResponse(User user, ChatbotInfoDto chatbotInfoDto) {
         //Making the chatbotInfoDto into a String
         String userMessage = chatbotInfoDto.toString();
+
+        if (userMessage.equals(user.getPreviousInputs())){
+            return user.getPreviousInputs();
+        }
 
         RestTemplate restTemplate = new RestTemplate();
 
@@ -44,6 +56,11 @@ public class OpenAiService {
         String output = (String) responseBody.get(0).get("generated_text");
         int cutOffIndex = output.indexOf(". Give me Advice.");
         output = output.substring(cutOffIndex+17);
+
+        //Saving the inputs and the output
+        user.setPreviousInputs(chatbotInfoDto.toString());
+        user.setSavedResponse(output);
+        userRepository.save(user);
 
         //Returning the output
         if (responseBody != null && !responseBody.isEmpty()) {
