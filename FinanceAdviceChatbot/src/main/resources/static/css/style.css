@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Segoe UI", sans-serif;
+    font-family: "Roboto","Roboto Thin", "Segoe UI", sans-serif;
 
 }
 
@@ -58,6 +58,7 @@
     color: #e47113;
     display: flex;
     align-items: center;
+    margin-right: 20px;
     justify-content: center;
     text-decoration: none;
     height: 100%;
@@ -68,7 +69,6 @@
 
 .navbar-links:hover {
     color: #fed183;
-    border-bottom: 2px solid #fed183;
 }
 
 
