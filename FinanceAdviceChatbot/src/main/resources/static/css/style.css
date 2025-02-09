@@ -113,7 +113,7 @@
 }
 
 .navbar-links {
-    color: #ff8d30;
+    color: #e47113;
     display: flex;
     align-items: center;
     margin-right: 20px;
@@ -388,17 +388,19 @@
 
 .FinanceAdviseHeader{
     text-align: center;
-    font-size: 50px;
+    font-size: 45px;
     padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     color: #d35f0f;
     font-weight: 700;
 }
 
 .FinanceAdviseOutput{
     padding: 10px;
-    width: 80vw;
+    width: 90vw;
     margin-left: 2vw;
     text-wrap: wrap;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 600;
 }
