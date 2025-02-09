@@ -66,9 +66,8 @@
 }
 
 .calculate-button:hover {
-    background-color: #e9d6b5;
-    border: 2px solid #e9d6b5cd;
-
+    background-color: #092350; /* Darker orange on hover */
+    cursor: pointer;
 }
 
 button.calculate-button a{
@@ -82,7 +81,7 @@ button.calculate-button a{
     border: 10px;
     background-color: #ffffff;
     margin-left: -140px;
-    margin-top: 90px;
+    margin-top: 100px;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 12px;
