@@ -19,6 +19,7 @@ public class OpenAiService {
     public String getChatbotResponse(ChatbotInfoDto chatbotInfoDto) {
         //Making the chatbotInfoDto into a String
         String userMessage = chatbotInfoDto.toString();
+        System.out.println(userMessage);
 
         RestTemplate restTemplate = new RestTemplate();
 
