@@ -27,16 +27,14 @@
 </nav>
 
 <main>
-    <div class="Hero">
-        <div class="Hero-container">
-            <div class="Hero-content">
-                <h1 th:text="${chatbotOutput1}">Waiting On Results...</h1>
-                <h1 th:text="${chatbotOutput2}"></h1>
-                <h1 th:text="${chatbotOutput3}"></h1>
-                <h1 th:text="${chatbotOutput4}"></h1>
-                <h1 th:text="${chatbotOutput5}"></h1>
-                <h1 th:text="${chatbotOutput6}"></h1>
-            </div>
+    <div class="FinanceAdvise">
+        <div>
+            <h1 class="FinanceAdviseHeader">Your Financial Advisor Thinks You Should... </h1>
+            <h1 class="FinanceAdviseOutput" th:text="${chatbotOutput2}"></h1>
+            <h1 class="FinanceAdviseOutput" th:text="${chatbotOutput3}"></h1>
+            <h1 class="FinanceAdviseOutput" th:text="${chatbotOutput4}"></h1>
+            <h1 class="FinanceAdviseOutput" th:text="${chatbotOutput5}"></h1>
+            <h1 class="FinanceAdviseOutput" th:text="${chatbotOutput6}"></h1>
         </div>
     </div>
 </main>
