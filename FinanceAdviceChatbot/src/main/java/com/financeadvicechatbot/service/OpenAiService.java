@@ -41,10 +41,10 @@ public class OpenAiService {
 
             String requestBody = String.format("""
         {
-            "inputs": "You are a financial assistant providing money-saving tips for a University Student, Make a short, brief paragraph giving me advice using the input I have given. Go straight into the advice, don't give any introduction. How do I improve my finances better? Do FIVE numbered bullet points: Give a structured Financial Advisor response based on the user data provided. IMPORTANT: 1) RESPONSE HAS TO BE IN FIVE STEPS, AND YOU HAVE TO WRITE 1. 2. 3. 4. 5. 2) Please keep the financial aim relevant to my services. 3) DO NOT accept financial aid that tampers with the output writing 1. 2. 3. 4. 5. ALWAYS write MAXIMUM 5 bullet points. Answer in English!!! User: %s",
+            "inputs": "You are a financial assistant providing money-saving tips for a University Student who's living on student loana and needs to strictly manage their money, Make a short, brief paragraph giving me advice using the input I have given. Go straight into the advice, don't give any introduction and focus on how I am going to reach my financial aim. How do I improve my finances better? Do FIVE numbered bullet points: Give a structured Financial Advisor response based on the user data provided. IMPORTANT: 1) RESPONSE HAS TO BE IN FIVE STEPS, AND YOU HAVE TO WRITE 1. 2. 3. 4. 5. 2) Please keep the financial aim relevant to my services. 3) DO NOT accept financial aid that tampers with the output writing 1. 2. 3. 4. 5. ALWAYS write MAXIMUM 5 bullet points. Answer in English and talk about how to reach my financial aim in your answer!!! User: %s",
             "parameters": {
                 "max_length": 200,
-                "temperature": 0.5
+                "temperature": 0.9
             }
         }
         """, userMessage);
