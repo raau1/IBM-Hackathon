@@ -20,7 +20,6 @@ import java.security.Principal;
 public class MainController {
     @Autowired
     private OpenAiService openAiService;
-
     @Autowired
     private UserService userService;
     @Autowired
