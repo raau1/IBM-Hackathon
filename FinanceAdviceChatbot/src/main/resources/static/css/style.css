@@ -52,20 +52,13 @@
     margin-right: 23px;
 }
 
-/* Profile Picture (Add Hover Effect) */
+/* Profile Picture */
 .profile-pic {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 2px solid white;
     cursor: pointer;
-    transition: transform 0.2s ease, border 0.2s ease;
-}
-
-/* Enlarge profile picture ONLY when hovering */
-.profile-pic:hover {
-    transform: scale(1.1); /* Increase size slightly */
-    border: 2px solid #e47113; /* Optional: Change border color */
 }
 
 /* Dropdown Menu (Hidden by Default) */
@@ -76,10 +69,10 @@
     top: 60px;
     right: 0;
     background-color: white;
-    border: 1px groove #cccccc9e;
-    border-radius:8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 75px;
+    min-width: 80px;
     z-index: 1000;
     transition: opacity 0.3s ease, transform 0.2s ease, visibility 0.3s; /* Smooth fade-in transition */
     transform: translateY(-10px); /* Moves dropdown up slightly before appearing */
@@ -91,7 +84,6 @@
     visibility: visible;
     transform: translateY(0); /* Moves dropdown to normal position */
 }
-
 
 /* Dropdown Items */
 .dropdown-item {
@@ -121,7 +113,7 @@
 }
 
 .navbar-links {
-    color: #e47113;
+    color: #ff8d30;
     display: flex;
     align-items: center;
     margin-right: 20px;
@@ -244,8 +236,8 @@
     border-radius: 14px;
     font-size: 15px;
     width: 150px;
-    background-color: #e47113ed;
-    border: outset;
+    background-color: #e47113;
+    border: none;
     font-family: sans-serif;
     text-decoration: none;
     display: block;
