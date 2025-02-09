@@ -67,8 +67,23 @@ public class OpenAiService {
             chatbotOutput = user.getSavedResponse();
         }
 
+        System.out.println(chatbotOutput);
+
         //Making an output of strings list
         List<String> outputStrings = new ArrayList<>();
+        //Finding the indexes of the bullet points
+        int oneIndex = chatbotOutput.indexOf("1.");
+        int twoIndex = chatbotOutput.indexOf("2.");
+        int threeIndex = chatbotOutput.indexOf("3.");
+        int fourIndex = chatbotOutput.indexOf("4.");
+        int fiveIndex = chatbotOutput.indexOf("5.");
+        //Adding the substrings to the list
+        outputStrings.add(chatbotOutput.substring(0,oneIndex));
+        outputStrings.add(chatbotOutput.substring(oneIndex,twoIndex));
+        outputStrings.add(chatbotOutput.substring(twoIndex,threeIndex));
+        outputStrings.add(chatbotOutput.substring(threeIndex,fourIndex));
+        outputStrings.add(chatbotOutput.substring(fourIndex,fiveIndex));
+        outputStrings.add(chatbotOutput.substring(fiveIndex));
 
 
         //Returning the output
