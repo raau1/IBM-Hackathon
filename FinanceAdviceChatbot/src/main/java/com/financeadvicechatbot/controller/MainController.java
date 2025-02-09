@@ -34,6 +34,7 @@ public class MainController {
 
     @RequestMapping("/financeAdvice")
     public String financeAdvise(@AuthenticationPrincipal UserDetails userDetails, Model model) {
+        System.out.println("Entering this function");
         User user = userRepository.findByEmail(userDetails.getUsername());
         ChatbotInfoDto chatbotInfo = userService.getChatbotInfo(user);
         List<String> chatbotOutput = openAiService.getChatbotResponse(user, chatbotInfo);
@@ -59,6 +60,6 @@ public class MainController {
         user.setSpendingLeisure(leisureMiscellaneous);
         user.setSpendingSubscriptions(subscriptions);
         userRepository.save(user);
-        return "financeAdvise";
+        return "redirect:/financeAdvice";
     }
 }
