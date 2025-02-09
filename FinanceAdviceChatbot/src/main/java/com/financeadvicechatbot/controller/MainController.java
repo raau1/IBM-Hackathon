@@ -13,7 +13,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
 import java.util.List;
@@ -46,4 +48,17 @@ public class MainController {
 
     @GetMapping("/chatbot")
     public String chatbot(){ return "Chatbot";}
+
+    @PostMapping("/chatbot")
+    public String chatbot(@AuthenticationPrincipal UserDetails userDetails, @RequestParam float monthlyIncome, @RequestParam String financialAim, @RequestParam float monthlySaving, @RequestParam float necessities, @RequestParam float leisureMiscellaneous, @RequestParam float subscriptions) {
+        User user = userRepository.findByEmail(userDetails.getUsername());
+        user.setMonthlyIncome(monthlyIncome);
+        user.setFinancialAim(financialAim);
+        user.setMonthlySavings(monthlySaving);
+        user.setSpendingNeccesities(necessities);
+        user.setSpendingLeisure(leisureMiscellaneous);
+        user.setSpendingSubscriptions(subscriptions);
+        userRepository.save(user);
+        return "financeAdvise";
+    }
 }
