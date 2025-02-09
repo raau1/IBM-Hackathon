@@ -32,7 +32,7 @@ public class MainController {
     public String financeAdvise(@AuthenticationPrincipal UserDetails userDetails, Model model) {
         User user = userRepository.findByEmail(userDetails.getUsername());
         ChatbotInfoDto chatbotInfo = userService.getChatbotInfo(user);
-        String chatbotOutput = openAiService.getChatbotResponse(chatbotInfo);
+        String chatbotOutput = openAiService.getChatbotResponse(user, chatbotInfo);
         model.addAttribute("chatbotOutput", chatbotOutput);
         return "financeAdvise";
     }

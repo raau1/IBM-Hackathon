@@ -1,5 +1,6 @@
 package com.financeadvicechatbot.model;
 
+import com.financeadvicechatbot.dto.ChatbotInfoDto;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,6 +10,7 @@ public class User {
     @Id
     private String email;
     private String password;
+    //Inputs received from the user, on the chatbot page
     private String financialAim;
     private float monthlyIncome;
     private float monthlySavings;
@@ -16,6 +18,12 @@ public class User {
     private float spendingLeisure;
     private float spendingSubscriptions;
     private float spendingOther;
+    //Stores the output of the ChatbotInfoDto that was made
+    @Lob
+    private String previousInputs;
+    //Saves the output from the AI
+    @Lob
+    private String savedResponse;
 
     // Getters and Setters
     public String getEmail() {
@@ -88,5 +96,21 @@ public class User {
 
     public void setSpendingOther(float spendingOther) {
         this.spendingOther = spendingOther;
+    }
+
+    public String getPreviousInputs() {
+        return previousInputs;
+    }
+
+    public void setPreviousInputs(String previousInputs) {
+        this.previousInputs = previousInputs;
+    }
+
+    public String getSavedResponse() {
+        return savedResponse;
+    }
+
+    public void setSavedResponse(String savedResponse) {
+        this.savedResponse = savedResponse;
     }
 }

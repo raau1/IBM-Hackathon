@@ -142,13 +142,11 @@
 }
 
 .h-textbox {
-    padding: 50px;
+    padding: 70px;
     background-color: #ffffff;
-    width: 600px;
+    width: 700px;
     border-radius: 25px;
-    margin: auto;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 405px;
 }
 
 .lower-container {
@@ -160,135 +158,39 @@
 }
 
 #box-title {
-    font-size: 28px;
-    color: #2e4b69;
-    font-weight: bold;
-    margin-bottom: 15px;
+    font-size: 30px;
+    color: #e47113;
+
+
 }
 
-
 #box-content {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 20px;
-    line-height: 1.5;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #d4a177;
+    margin-top: 20px;
+
 }
 
 .Chatbot-button {
     margin-top: 20px;
+    margin-left: 15px;
     border-radius: 14px;
-    font-size: 16px;
-    width: 180px;
-    padding: 12px;
+    font-size: 15px;
+    width: 150px;
     background-color: #e47113;
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.Chatbot-button a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-.Chatbot-button:hover {
-    background-color: #d45f08;
-    transform: scale(1.05);
-}
-
-.Contact-us-container {
-    background: #e9d6b5;
-    height: 762px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.forum-box {
-    padding: 40px;
-    background-color: #ffffff;
-    width: 400px;
-    height: 520px;
-    border-radius: 25px;
-}
-
-#Forum-title {
-    font-size: 24px;
-    color: #2e4b69;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.forum-item {
-    margin-bottom: 20px;
-}
-
-.forum-item label {
-    display: block;
-    font-size: 16px;
-    font-weight: 600;
-    color: #2e4b69;
-    margin-bottom: 5px;
-}
-
-.forum-item input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #e9d6b5;
-    background-color: #e9d6b5;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.forum-box button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 21px;
-    background-color: #2e4b69;
-    color: #e9d6b5;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
+    border-color: #e47113;
     font-family: sans-serif;
-    font-weight: 600;
 
 }
 
-
-.forums-item label {
-    display: block;
-    font-size: 16px;
-    font-weight: 600;
-    color: #2e4b69;
-    margin-bottom: 5px;
+button .Chatbot-button{
+    text-decoration: none;
 }
 
-.forums-item input {
+.chatbotOutput{
     width: 100%;
-    padding: 10px;
-    border: 1px solid #e9d6b5;
-    background-color: #e9d6b5;
-    border-radius: 5px;
-    font-size: 14px;
-    height: 100px;
-
+    height: 100%;
+    text-wrap: wrap;
+    font-size: 10px;
 }
-
-.Register-item  {
-    width: 100%;
-    padding: 52px;
-    font-size: 14px;
-
-
-}
-
-
-.forum-box button:hover {
-    background-color: #e9d6b5;
-    color: #e47113;
-}
-
-
