@@ -11,7 +11,7 @@
     padding: 70px;
     background-color: #ffffff;
     width: 400px;
-    height: 580px;
+    height: 520px;
     position: center;
     border-radius: 25px;
     margin-left: px;
@@ -22,7 +22,7 @@
     padding: 70px;
     background-color: #ffffff;
     width: 400px;
-    height: 580px;
+    height: 520px;
     position: center;
     border-radius: 25px;
     margin-left: -55px;
@@ -122,38 +122,12 @@ button.calculate-button a{
     color: #2e4b69;
 }
 
-#Monthly-income-main {
+#form-textbox {
     background-color: #f5e5c6dc;
     border: 1px solid #e9d6b5cd;
 
 }
 
-#Financial-aim-main {
-    background-color: #f5e5c6dc;
-    border: 1px solid #e9d6b5cd;
-}
-
-
-#Monthly-saving-main {
-    background-color: #f5e5c6dc;
-    border: 1px solid #e9d6b5cd;
-}
-
-#Necessities-main {
-    background-color: #f5e5c6dc;
-    border: 1px solid #e9d6b5cd;
-}
-
-
-#Leisure-miscellaneous-main {
-    background-color: #f5e5c6dc;
-    border: 1px solid #e9d6b5cd;
-}
-
-#Subscriptions-main {
-    background-color: #f5e5c6dc;
-    border: 1px solid #e9d6b5cd;
-}
 
 
 .filling-form {
@@ -179,6 +153,3 @@ button.calculate-button a{
     border-radius: 5%;
 
 }
-
-
-
