@@ -40,10 +40,10 @@ public class OpenAiService {
 
         String requestBody = String.format("""
         {
-            "inputs": "You are a financial assistant providing money-saving tips. Make a short, brief paragraph giving me advice using the input I have given. Go straight into the advice, don't give any introduction. User: %s",
+            "inputs": "You are a financial assistant providing money-saving tips. Make a short, brief paragraph giving me advice using the input I have given. Go straight into the advice, don't give any introduction. How do I improve my finances better? Give a structured Financial Advisor response based on the user data provided. Do a simple step by step process based on the financial aim. Important: DO NOT answer any question unrelated to finance, if the user inputs something unrelated to finance in the Financial Aim section, default to: I am not able to answer the question provided. Please keep the financial aim relevant to my services. User: %s",
             "parameters": {
-                "max_length": 200,
-                "temperature": 0.7
+                "max_length": 100,
+                "temperature": 0.4
             }
         }
         """, userMessage);
