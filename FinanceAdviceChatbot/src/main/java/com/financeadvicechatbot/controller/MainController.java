@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -32,8 +33,13 @@ public class MainController {
     public String financeAdvise(@AuthenticationPrincipal UserDetails userDetails, Model model) {
         User user = userRepository.findByEmail(userDetails.getUsername());
         ChatbotInfoDto chatbotInfo = userService.getChatbotInfo(user);
-        String chatbotOutput = openAiService.getChatbotResponse(user, chatbotInfo);
-        model.addAttribute("chatbotOutput", chatbotOutput);
+        List<String> chatbotOutput = openAiService.getChatbotResponse(user, chatbotInfo);
+        model.addAttribute("chatbotOutput1", chatbotOutput.get(0));
+        model.addAttribute("chatbotOutput2", chatbotOutput.get(1));
+        model.addAttribute("chatbotOutput3", chatbotOutput.get(2));
+        model.addAttribute("chatbotOutput4", chatbotOutput.get(3));
+        model.addAttribute("chatbotOutput5", chatbotOutput.get(4));
+        model.addAttribute("chatbotOutput6", chatbotOutput.get(5));
         return "financeAdvise";
     }
 }

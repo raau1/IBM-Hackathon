@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,49 +26,61 @@ public class OpenAiService {
         this.userRepository = userRepository;
     }
 
-    public String getChatbotResponse(User user, ChatbotInfoDto chatbotInfoDto) {
+    public List<String> getChatbotResponse(User user, ChatbotInfoDto chatbotInfoDto) {
         //Making the chatbotInfoDto into a String
         String userMessage = chatbotInfoDto.toString();
 
-        if (userMessage.equals(user.getPreviousInputs())){
-            return user.getPreviousInputs();
+        String chatbotOutput = "";
+
+        if (!(userMessage.equals(user.getPreviousInputs()))) {
+
+            RestTemplate restTemplate = new RestTemplate();
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", "Bearer " + apiKey);
+            headers.setContentType(MediaType.APPLICATION_JSON);
+
+            String requestBody = String.format("""
+                    {
+                        "inputs": "You are a financial assistant providing money-saving tips. Make a short, brief paragraph giving me advice using the input I have given. Go straight into the advice, don't give any introduction. How do I improve my finances better? Give a structured Financial Advisor response based on the user data provided. Do a simple step by step process based on the financial aim. Important: DO NOT answer any question unrelated to finance, if the user inputs something unrelated to finance in the Financial Aim section, default to: I am not able to answer the question provided. Please keep the financial aim relevant to my services. User: %s",
+                        "parameters": {
+                            "max_length": 200,
+                            "temperature": 0.7
+                        }
+                    }
+                    """, userMessage);
+
+            HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
+            ResponseEntity<List> response = restTemplate.exchange(API_URL, HttpMethod.POST, request, List.class);
+
+            //Making the output from the AI understandable
+            List<Map<String, Object>> responseBody = response.getBody();
+            chatbotOutput = (String) responseBody.get(0).get("generated_text");
+            int cutOffIndex = chatbotOutput.indexOf(". Give me Advice.");
+            chatbotOutput = chatbotOutput.substring(cutOffIndex + 17);
+
+            //Saving the inputs and the output
+            user.setPreviousInputs(chatbotInfoDto.toString());
+            user.setSavedResponse(chatbotOutput);
+            userRepository.save(user);
+
+        }
+        else{
+            chatbotOutput = user.getSavedResponse();
         }
 
-        RestTemplate restTemplate = new RestTemplate();
+        //Turning the chatbotOutput into 5 Bullet Points, with starting text
+        List<String> outputStrings = new ArrayList<>();
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "Bearer " + apiKey);
-        headers.setContentType(MediaType.APPLICATION_JSON);
 
-        String requestBody = String.format("""
-        {
-            "inputs": "You are a financial assistant providing money-saving tips. Make a short, brief paragraph giving me advice using the input I have given. Go straight into the advice, don't give any introduction. How do I improve my finances better? Give a structured Financial Advisor response based on the user data provided. Do a simple step by step process based on the financial aim. Important: DO NOT answer any question unrelated to finance, if the user inputs something unrelated to finance in the Financial Aim section, default to: I am not able to answer the question provided. Please keep the financial aim relevant to my services. User: %s",
-            "parameters": {
-                "max_length": 100,
-                "temperature": 0.4
-            }
-        }
-        """, userMessage);
-
-        HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
-        ResponseEntity<List> response = restTemplate.exchange(API_URL, HttpMethod.POST, request, List.class);
-
-        //Making the output from the AI understandable
-        List<Map<String, Object>> responseBody = response.getBody();
-        String output = (String) responseBody.get(0).get("generated_text");
-        int cutOffIndex = output.indexOf(". Give me Advice.");
-        output = output.substring(cutOffIndex+17);
-
-        //Saving the inputs and the output
-        user.setPreviousInputs(chatbotInfoDto.toString());
-        user.setSavedResponse(output);
-        userRepository.save(user);
 
         //Returning the output
-        if (responseBody != null && !responseBody.isEmpty()) {
-            return output;
+        if (outputStrings.get(0) == null) {
+            return outputStrings;
         }
 
-        return "Sorry, I couldn't process your request.";
+        List<String> error = new ArrayList<>();
+        error.add("Couldn't process request");
+        return error;
     }
 }
