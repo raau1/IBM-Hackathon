@@ -30,8 +30,7 @@
          - Store your API key as an Environment Variable, OPENAI_API_KEY, using the instructions below : 
              -setx OPENAI_API_KEY "your_api_key_here"
              - You can verify this worked using the command : echo %OPENAI_API_KEY%
-       ```
-       
+    
 4. **Running the Project:**
    - Once the API key is set up, the project should run successfully.
 
